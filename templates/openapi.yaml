@@ -1,0 +1,63 @@
+openapi: 3.1.0
+info:
+  title: Example API
+  description: Example API using OpenAPI v3
+  version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: https://example.com
+paths:
+  /v1/authn/login:
+    $ref: "./paths/v1/authn.login/post.yaml"
+  /v1/authn/mfa/otp/verification:
+    $ref: "./paths/v1/authn.mfa/post.yaml#/OTPVerification"
+  /v1/authn/mfa/totp/verification:
+    $ref: "./paths/v1/authn.mfa/post.yaml#/TOTPVerification"
+  /v1/otp:
+    $ref: "./paths/v1/otp/post.yaml#/OTPRequest"
+components:
+  securitySchemes:
+    api_key:
+      description: Example description text of the API key scheme.
+      type: apiKey
+      in: header
+      name: api_key
+    bearerAuth:
+      type: http
+      scheme: Bearer
+      bearerFormat: JWT
+  schemas:
+    BaseResponseObject:
+      $ref: ./components/schemas/BaseResponseObject.yaml
+    TokenObject:
+      $ref: ./components/schemas/TokenObject.yaml
+  responses:
+    Success:
+      $ref: ./components/responses/200.yaml#/Success
+    BadRequest:
+      $ref: ./components/responses/400.yaml#/BadRequest
+    InvalidAuthToken:
+      $ref: ./components/responses/401.yaml#/InvalidAuthToken
+    Unprocessable:
+      $ref: ./components/responses/422.yaml#/Unprocessable
+tags:
+  - name: "v1.authn.login"
+    x-displayName: authn.login
+    description: "authentication.login operations"
+  - name: "v1.authn.logout"
+    x-displayName: authn.logout
+    description: "authentication.logout operations"
+  - name: "v1.authn.mfa"
+    x-displayName: authn.mfa
+    description: "authentication.MFA operations"
+  - name: "v1.otp"
+    x-displayName: otp
+    description: "otp operations"
+x-tagGroups:
+  - name: v1
+    tags:
+      -  v1.authn.login
+      - v1.authn.mfa
+      - v1.otp

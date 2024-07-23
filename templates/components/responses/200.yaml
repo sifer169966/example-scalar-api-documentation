@@ -1,0 +1,12 @@
+Success:
+  description: "{{ .const.responseCodes._2001.description }}"
+  content:
+    application/json:
+      schema:
+          $ref: "../../openapi.yaml#/components/schemas/BaseResponseObject"
+      examples:
+        Success:
+          value:
+            code: "{{ .const.responseCodes._2001.code }}"
+            message: "{{ .const.responseCodes._2001.message }}"
+            data: {}

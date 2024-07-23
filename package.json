@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "@redocly/cli": "^1.17.1",
+    "@scalar/cli": "^0.2.141",
+    "@scalar/express-api-reference": "^0.4.92",
+    "@stoplight/json-ref-resolver": "^3.1.6",
+    "express": "^4.19.2",
+    "json-refs": "^3.0.15",
+    "redoc-cli": "^0.13.21",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "yaml": "^2.4.5",
+    "yamljs": "^0.3.0"
+  },
+  "name": "example-open-api",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "make gen && make merge && node app.js"
+  }
+}

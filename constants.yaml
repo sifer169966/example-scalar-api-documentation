@@ -1,0 +1,28 @@
+responseCodes:
+  "_2001":
+    code: "2001"
+    message: "success"
+    description: "request successfully"
+  "_2021":
+    code: "2021"
+    message: "mfa required"
+    description: "the provided credential was valid, but MFAs are required"
+  "_4001":
+    code: "4001"
+    message: "the request does not satisfy the rule"
+    description: "invalid body/parameter/header, please make sure you are conforming with the request specification"
+  "_4011":
+    code: "4011"
+    message: invalid token/session
+    description: "authenticated token is missing or invalid"
+  "_4221":
+    code: "4221"
+    message: unprocessable
+    description: the request was well-formed but was unable to be followed due to business errors, for instance, your balance is not sufficient.
+examples:
+  username:
+    valid: "johndoe@example.com"
+    invalid: "johdoe_example.com"
+    
+  token:
+    jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"

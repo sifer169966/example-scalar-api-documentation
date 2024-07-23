@@ -1,0 +1,14 @@
+OTPRequest:
+  post:
+    tags:
+      - v1.otp
+    summary: OTP request
+    description: sending an OTP/TOTP code for verification
+    operationId: OTPRequest
+    security:
+      - bearerAuth: []
+    responses:
+      '200':
+        $ref: "../../../openapi.yaml#/components/responses/Success"
+      '401':
+        $ref: "../../../openapi.yaml#/components/responses/InvalidAuthToken"

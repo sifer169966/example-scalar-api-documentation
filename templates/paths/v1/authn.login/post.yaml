@@ -1,0 +1,16 @@
+post:
+  tags:
+    - v1.authn.login
+  summary: Login
+  description: verify the credentials to obtain authorized tokens
+  operationId: Login
+  security: []
+  requestBody:
+    $ref: "./post.req.yaml#/LoginRequestBody"
+  responses:
+    '200':
+      $ref: "./post.resp.yaml#/LoginResponse200"
+    '202':
+      $ref: "./post.resp.yaml#/LoginResponse202"
+    '400':
+      description: Bad request

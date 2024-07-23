@@ -1,0 +1,21 @@
+OTPVerificationRequestBody:
+  description: "verify an OTP code that has been sent to the user-preferred channel"
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - code
+        properties:
+          code:
+            type: string
+      examples:
+        Valid:
+          summary: "example of a valid otp verification request body"
+          value:
+            code: "123456"
+        InvalidCode:
+          summary: "example of an invalid code"
+          value:
+            code: "johndoe"

@@ -1,0 +1,15 @@
+post:
+  tags:
+    - v1.authn.logout
+  summary: Logout
+  description: token revocation
+  operationId: Logout
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      $ref: "./post.resp.yaml#/LoginResponse200"
+    '202':
+      $ref: "./post.resp.yaml#/LoginResponse202"
+    '400':
+      description: Bad request

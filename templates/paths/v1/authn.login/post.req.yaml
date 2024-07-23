@@ -1,0 +1,23 @@
+LoginRequestBody:
+  description: "auth request payload"
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          username:
+            type: string
+          password:
+            type: string
+      examples:
+        Valid:
+          summary: "example of a valid username"
+          value:
+            username: "{{ .const.examples.username.valid }}"
+            password: "xxxx"
+        Invalid:
+          summary: "example of an invalid username"
+          value:
+            username: "{{ .const.examples.username.invalid }}"
+            password: "xxxx"

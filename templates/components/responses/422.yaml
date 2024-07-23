@@ -1,0 +1,12 @@
+Unprocessable:
+  description: "{{ .const.responseCodes._4221.description }}"
+  content:
+    application/json:
+      schema:
+          $ref: "../../openapi.yaml#/components/schemas/BaseResponseObject"
+      examples:
+        Unprocessable:
+          value:
+            code: "{{ .const.responseCodes._4221.code }}"
+            message: "{{ .const.responseCodes._4221.message }}"
+            data: {}

@@ -1,0 +1,18 @@
+type: object
+properties:
+  code:
+    type: string
+    example: "2001"
+    additionalProperties: true 
+  message:
+    type: string
+    example: "Success"
+    additionalProperties: true 
+  data:
+    type: object
+    additionalProperties: true  # Allow any properties for the object
+    example: {}
+required:
+  - code
+  - message
+  - data

@@ -1,0 +1,12 @@
+BadRequest:
+  description: "{{ .const.responseCodes._4001.description }}"
+  content:
+    application/json:
+      schema:
+          $ref: "../../openapi.yaml#/components/schemas/BaseResponseObject"
+      examples:
+        BadRequest:
+          value:
+            code: "{{ .const.responseCodes._4001.code }}"
+            message: "{{ .const.responseCodes._4001.message }}"
+            data: {}

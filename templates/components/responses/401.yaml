@@ -1,0 +1,12 @@
+InvalidAuthToken:
+  description: "{{ .const.responseCodes._4011.description }}"
+  content:
+    application/json:
+      schema:
+          $ref: "../../openapi.yaml#/components/schemas/BaseResponseObject"
+      examples:
+        InvalidAuthToken:
+          value:
+            code: "{{ .const.responseCodes._4011.code }}"
+            message: "{{ .const.responseCodes._4011.message }}"
+            data: {}

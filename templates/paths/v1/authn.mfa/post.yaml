@@ -1,0 +1,42 @@
+OTPVerification:
+  post:
+    tags:
+      - v1.authn.mfa
+    summary: OTP Verification
+    description: verify an OTP code that has been sent to the user-preferred channel to upgrade the authenticated token
+    operationId: AuthOTPVerification
+    security:
+      - bearerAuth: []
+    requestBody:
+      $ref: "./post.req.yaml#/OTPVerificationRequestBody"
+    responses:
+      "200":
+        $ref: "./post.resp.yaml#/OTPVerificationResponse200"
+      "400":
+        $ref: "../../../openapi.yaml#/components/responses/BadRequest"
+      "401":
+        $ref: "../../../openapi.yaml#/components/responses/InvalidAuthToken"
+      "422":
+        $ref: "../../../openapi.yaml#/components/responses/Unprocessable"
+
+
+TOTPVerification:
+  post:
+    tags:
+    - v1.authn.mfa
+    summary: TOTP Verification
+    description: verify a TOTP code that is generated from a generator by using the shared-secret
+    operationId: AuthTOTPVerification
+    security:
+      - bearerAuth: []
+    requestBody:
+      $ref: "./post.req.yaml#/OTPVerificationRequestBody"
+    responses:
+      "200":
+        $ref: "./post.resp.yaml#/OTPVerificationResponse200"
+      "400":
+        $ref: "../../../openapi.yaml#/components/responses/BadRequest"
+      "401":
+        $ref: "../../../openapi.yaml#/components/responses/InvalidAuthToken"
+      "422":
+        $ref: "../../../openapi.yaml#/components/responses/Unprocessable"

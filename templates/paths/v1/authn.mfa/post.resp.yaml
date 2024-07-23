@@ -1,0 +1,18 @@
+OTPVerificationResponse200:
+  description: mfa verification was succeed
+  content:
+    application/json:
+      schema:
+        allOf:
+          - $ref: "../../../openapi.yaml#/components/schemas/BaseResponseObject"
+          - type: object
+            properties:
+              data:
+                $ref: '../../../openapi.yaml#/components/schemas/TokenObject'
+      examples:
+        VerificationSuccess:
+          value:
+            code: "{{ .const.responseCodes._2001.code }}"
+            message: "{{ .const.responseCodes._2001.message }}"
+            data:
+              token: "{{ .const.examples.token.jwt }}"
