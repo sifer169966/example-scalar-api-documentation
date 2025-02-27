@@ -3,3 +3,9 @@ gen:
 
 merge:
 	redocly lint ./publish/openapi.yaml && redocly bundle ./publish/openapi.yaml -o ./publish/bundled.yaml
+
+build.html:
+	$(MAKE) gen
+	$(MAKE) merge
+	node build.js
+	
